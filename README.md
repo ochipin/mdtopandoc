@@ -1,4 +1,4 @@
-# Markdown -> PDFへ変換する
+# Pandocを利用して、 Markdown -> PDFへ変換する
 
 Markdownを、PDFへ出力する。以下compose.ymlを用意する。
 
@@ -64,4 +64,28 @@ $ docker run --rm -it \
 ```
 $ alias pandoc='docker run --rm -it -v $(pwd):/data -v $HOME:/home/user -v /usr/local/share/fonts:/usr/local/share/fonts -v /usr/share/fonts:/usr/share/fonts pandoc/myextra -d /.pandoc/pandoc.yml'
 $ pandoc README.md -o example.pdf
+```
+
+# Markdownで取り扱えるメタデータ
+
+次のメタ情報を、Markdownファイルの先頭に追加できる。
+
+```markdown
+---
+title: Markdown -> PDFへ変換するコンテナ
+subtitle: 1.0版
+author:  落合 優
+date: 2023/05/26
+keywords: [Markdown, Pandoc]
+abstract: |
+  | 版  | 発行日     | 節 | 改版内容 |
+  |:--  |:--         |:-- |:--       |
+  | 1.0 | YYYY.MM.DD | -  | 新規発行 |
+---
+
+概要
+===
+
+...
+
 ```
