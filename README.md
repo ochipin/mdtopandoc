@@ -1,14 +1,3 @@
----
-# title: Markdown -> PDFへ変換するコンテナ
-# subtitle: 1.0版
-# author:  落合 優
-# date: 2023/05/26
-# keywords: [Markdown, Pandoc]
-# abstract: |
-#  | 版  | 発行日     | 節 | 改版内容 |
-#  |:--  |:--         |:-- |:--       |
-#  | 1.0 | YYYY.MM.DD | -  | 新規発行 |
----
 # Markdown -> PDFへ変換する
 
 Markdownを、PDFへ出力する。以下compose.ymlを用意する。
