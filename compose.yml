@@ -1,0 +1,15 @@
+# PDF出力: docker-compose run --rm pandoc name.markdown -o example.pdf -d /.pandoc/pandoc.yml
+# コンテナに入る: docker-compose run --rm --entrypoint="sh" pandoc
+services:
+  pandoc:
+    # PanDocイメージ
+    image: pandoc/extra
+    # ディレクトリマウント
+    volumes:
+      # 各種設定ファイルをマウント
+      - ./config:/.pandoc
+      # PDF出力先をマウント
+      - .:/data
+      # フォントをマウント
+      - /usr/local/share/fonts:/usr/local/share/fonts
+      - /usr/share/fonts:/usr/share/fonts

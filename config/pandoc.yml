@@ -1,0 +1,119 @@
+# コードブロックの有効化
+listings: true
+# 見出し自動採番有効化
+number-sections: true
+# 目次作成
+table-of-contents: true
+# 目次は3階層までとする
+toc-depth: 3
+# ドキュメントスタイル
+highlight-style: tango
+# latexテンプレートファイル
+template: /.pandoc/templates/eisvogel.latex
+# 表の折り返しを自動判別する
+wrap: auto
+# デフォルト幅を変更する
+columns: 69
+# xelatexをエンジンに指定する
+pdf-engine: xelatex
+
+# 各種フィルタ
+filters:
+  - pandoc-crossref
+
+# メタデータ
+metadata:
+  listings: true
+  figureTitle: '図'
+  tableTitle: '表'
+  listingTitle: 'コード'
+  figPrefix: '図.'
+  tblPrefix: '表.'
+  lstPrefix: 'コード.'
+
+include-in-header:
+  - ${.}/templates/header.tex
+
+# テンプレート変数
+variables:
+  # 日本語
+  lang: ja
+  # 表紙を作成する
+  titlepage: true
+  # 表紙に表示するロゴ
+  titlepage-logo: "/.pandoc/images/icon.png"
+  # 表紙の背景色
+  titlepage-color: 'FFFFFF'
+  # 表紙の文字色
+  titlepage-text-color: '222222'
+  # 表紙上部に配置している線の色
+  titlepage-rule-color: '435488'
+  # 表紙上部に配置している線の太さ
+  titlepage-rule-height: 4
+  # 表紙背景画像
+  titlepage-background: /.pandoc/images/background.png
+  # 表紙以外に適用する背景画像
+  # page-background: /.pandoc/images/background.png
+  # 表紙以外の背景は透過する
+  # page-background-opacity: 0.2
+  # ヘッダ、フッタを非表示にする. page-background, page-background-opacity と連動するため、
+  # true にする場合は、 page-background, page-background-opacity の設定も無効化すること
+  disable-header-and-footer: false
+  # 余白設定
+  geometry:
+    - 'top=20mm'
+    - 'bottom=20mm'
+    - 'left=10mm'
+    - 'right=10mm'
+    - heightrounded
+  # 採番接頭辞・接尾辞の追加
+  header-includes:
+    # - \renewcommand{\thesection}{第\arabic{section}章}
+    # - \renewcommand{\thesubsection}{第\arabic{subsection}節}
+    # - \renewcommand{\thesubsubsection}{第\arabic{subsubsection}項}
+  # 字下げ
+  indent: true
+  # 下記コメントを外すことで、ヘッダの左側の title を非表示にする
+  # 画像ファイルパスを指定することで、ヘッダに画像を載せることも可能
+  # header-left: ' '
+  # 下記コメントを外すことで、ヘッダの右側の date を非表示にする
+  # header-right: ' '
+  # ヘッダ真ん中に表示したい文字列を指定する
+  # header-center: ''
+  # 下記コメントを外すことで、フッタ左側の author 情報を非表示にする
+  # footer-left: ' '
+  # 下記コメントを外すことで、フッタ右側の number 情報を非表示にする
+  # footer-right: ' '
+  # フッタ真ん中に表示したい文字列を指定する
+  # footer-center: ' '
+  # 脚注の内容を整理する
+  footnotes-pretty: true
+  # 脚注リンクから、本文脚注の出現場所に戻るリンクを無効化する
+  footnotes-disable-backlinks: false
+  # リンクテキストの色を青にする
+  linkcolor: blue
+  # テーブルの各行毎に色を変える
+  table-use-row-colors: true
+  # ロゴのサイズ
+  logo-width: 35mm
+  # 目次ページのタイトル
+  toc-title: 目次
+  # 目次ページの後に新しいページを作成する
+  toc-own-page: true
+  # 資料全体のフォントサイズ
+  fontsize: 10pt
+  # 資料全体のフォント
+  mainfont: 'IPAexGothic'
+  sansfont: 'IPAexGothic'
+  CJKmainfont: 'IPAexGothic'
+  # コードブロックは等幅フォントを指定する
+  monofont: IPAexGothic
+  # コードブロックのフォントサイズ(\tiny, \scriptsize, \footnotesize, \small, \normalsize, \large, \huge)
+  code-block-font-size: '\small'
+  # キャプション表示位置 (raggedright, centering, raggedleft)
+  caption-justification: centering
+  # xelatex の documentclass, classoption を指定する
+  documentclass:
+    - bxjsarticle
+  classoption:
+    - pandoc
