@@ -595,6 +595,62 @@ $endif$
 \item\relax\color{blockquote-text}\ignorespaces}{\unskip\unskip\endlist\end{customblockquote}}
 
 %
+% success block
+%
+\definecolor{success-background}{RGB}{223,240,216}
+\definecolor{success-border}{RGB}{214,233,198}
+\definecolor{success-text}{RGB}{60,118,61}
+\usepackage{tcolorbox}
+\newtcolorbox{Success}{
+  colback=success-background,
+  colframe=success-border,
+  coltext=success-text,
+  boxsep=5pt,
+  arc=2pt}
+
+%
+% info block
+%
+\definecolor{info-background}{RGB}{217,237,247}
+\definecolor{info-border}{RGB}{188,232,241}
+\definecolor{info-text}{RGB}{49,112,143}
+\usepackage{tcolorbox}
+\newtcolorbox{Info}{
+  colback=info-background,
+  colframe=info-border,
+  coltext=info-text,
+  boxsep=5pt,
+  arc=2pt}
+
+%
+% warning block
+%
+\definecolor{warning-background}{RGB}{252,248,227}
+\definecolor{warning-border}{RGB}{250,235,204}
+\definecolor{warning-text}{RGB}{138,109,59}
+\usepackage{tcolorbox}
+\newtcolorbox{Warning}{
+  colback=warning-background,
+  colframe=warning-border,
+  coltext=warning-text,
+  boxsep=5pt,
+  arc=2pt}
+
+%
+% danger block
+%
+\definecolor{danger-background}{RGB}{242,222,222}
+\definecolor{danger-border}{RGB}{235,204,209}
+\definecolor{danger-text}{RGB}{169,68,66}
+\usepackage{tcolorbox}
+\newtcolorbox{Danger}{
+  colback=danger-background,
+  colframe=danger-border,
+  coltext=danger-text,
+  boxsep=5pt,
+  arc=2pt}
+
+%
 % Source Sans Pro as the de­fault font fam­ily
 % Source Code Pro for monospace text
 %

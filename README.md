@@ -3,7 +3,7 @@
 Markdownを、PDFへ出力する。以下compose.ymlを用意する。
 
 ```yml
-# PDF出力: docker-compose run --rm pandoc name.markdown -o example.pdf -d /.pandoc/pandoc.yml
+# PDF出力: docker-compose run --rm pandoc name.markdown -o example.pdf -d /.pandoc/pandoc.yml -L /.pandoc/filters.lua
 # コンテナに入る: docker-compose run --rm --entrypoint="sh" pandoc
 services:
   pandoc:
@@ -25,7 +25,7 @@ docker compose コマンドで、Markdown -> PDFへ出力する。
 
 ```sh
 # docker compose run --rm pandoc <Markdown> -o <出力先> -d /.pandoc/pandoc.yml
-$ docker compose run --rm pandoc README.md -o example.pdf -d /.pandoc/pandoc.yml
+$ docker compose run --rm pandoc README.md -o example.pdf -d /.pandoc/pandoc.yml -L /.pandoc/filters.lua
 ```
 
 コンテナに入る場合は、次のコマンドを実行する
@@ -56,13 +56,13 @@ $ docker run --rm -it \
     -v $HOME:/home/user \
     -v /usr/local/share/fonts:/usr/local/share/fonts \
     -v /usr/share/fonts:/usr/share/fonts \
-  pandoc/myextra README.md -o example.pdf -d /.pandoc/pandoc.yml
+  pandoc/myextra README.md -o example.pdf -d /.pandoc/pandoc.yml -L /.pandoc/filters.lua
 ```
 
 コマンドが長いので、`alias`に登録する。
 
 ```
-$ alias pandoc='docker run --rm -it -v $(pwd):/data -v $HOME:/home/user -v /usr/local/share/fonts:/usr/local/share/fonts -v /usr/share/fonts:/usr/share/fonts pandoc/myextra -d /.pandoc/pandoc.yml'
+$ alias pandoc='docker run --rm -it -v $(pwd):/data -v $HOME:/home/user -v /usr/local/share/fonts:/usr/local/share/fonts -v /usr/share/fonts:/usr/share/fonts pandoc/myextra -d /.pandoc/pandoc.yml -L /.pandoc/filters.lua'
 $ pandoc README.md -o example.pdf
 ```
 
