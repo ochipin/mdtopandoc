@@ -597,9 +597,10 @@ $endif$
 %
 % success block
 %
-\definecolor{success-background}{RGB}{223,240,216}
-\definecolor{success-border}{RGB}{214,233,198}
-\definecolor{success-text}{RGB}{60,118,61}
+\definecolor{success-background}{RGB}{198,234,225}
+\definecolor{success-border}{RGB}{198,234,225}
+\definecolor{success-title}{RGB}{30,108,95}
+\definecolor{success-text}{RGB}{0,0,0}
 \usepackage{tcolorbox}
 \newtcolorbox{Success}{
   colback=success-background,
@@ -612,8 +613,9 @@ $endif$
 % info block
 %
 \definecolor{info-background}{RGB}{217,237,247}
-\definecolor{info-border}{RGB}{188,232,241}
-\definecolor{info-text}{RGB}{49,112,143}
+\definecolor{info-border}{RGB}{217,237,247}
+\definecolor{info-title}{RGB}{49,112,143}
+\definecolor{info-text}{RGB}{0,0,0}
 \usepackage{tcolorbox}
 \newtcolorbox{Info}{
   colback=info-background,
@@ -623,25 +625,42 @@ $endif$
   arc=2pt}
 
 %
-% warning block
+% important block
 %
-\definecolor{warning-background}{RGB}{252,248,227}
-\definecolor{warning-border}{RGB}{250,235,204}
-\definecolor{warning-text}{RGB}{138,109,59}
+\definecolor{important-background}{RGB}{255,244,220}
+\definecolor{important-border}{RGB}{255,244,220}
+\definecolor{important-title}{RGB}{175,86,10}
+\definecolor{important-text}{RGB}{0,0,0}
 \usepackage{tcolorbox}
-\newtcolorbox{Warning}{
-  colback=warning-background,
-  colframe=warning-border,
-  coltext=warning-text,
+\newtcolorbox{Important}{
+  colback=important-background,
+  colframe=important-border,
+  coltext=important-text,
+  boxsep=5pt,
+  arc=2pt}
+
+%
+% restricted block
+%
+\definecolor{restricted-background}{RGB}{233,212,255}
+\definecolor{restricted-border}{RGB}{233,212,255}
+\definecolor{restricted-title}{RGB}{109,0,235}
+\definecolor{restricted-text}{RGB}{0,0,0}
+\usepackage{tcolorbox}
+\newtcolorbox{Restricted}{
+  colback=restricted-background,
+  colframe=restricted-border,
+  coltext=restricted-text,
   boxsep=5pt,
   arc=2pt}
 
 %
 % danger block
 %
-\definecolor{danger-background}{RGB}{242,222,222}
-\definecolor{danger-border}{RGB}{235,204,209}
-\definecolor{danger-text}{RGB}{169,68,66}
+\definecolor{danger-background}{RGB}{238,163,165}
+\definecolor{danger-border}{RGB}{238,163,165}
+\definecolor{danger-title}{RGB}{139,25,36}
+\definecolor{danger-text}{RGB}{0,0,0}
 \usepackage{tcolorbox}
 \newtcolorbox{Danger}{
   colback=danger-background,

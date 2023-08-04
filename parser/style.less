@@ -1,0 +1,172 @@
+
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+.markdown-preview.markdown-preview {
+    // modify your style here
+    // eg: background-color: blue;
+    /* HackMDなどで使用できるalert(::: ... :::)を追加する */
+    .alert {
+      padding: 16px;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+    }
+    .alert > p,.alert > ul {
+      margin-bottom: 0;
+    }
+
+    /* ::: success ::: */
+    .alert-success, .alert-tip {
+      color: #000;
+      background-color: rgb(198,234,225);
+      border-color: rgb(198,234,225);
+    }
+    .alert-success::before, .alert-tip::before {
+      content: url('data:image/svg+xml;utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 -4 24 28"><path fill="rgb(30,108,95)" d="M23.016 9.984v2.016q0 0.375-0.141 0.75l-3.047 7.031q-0.469 1.219-1.828 1.219h-9q-0.797 0-1.406-0.609t-0.609-1.406v-9.984q0-0.797 0.609-1.406l6.563-6.609 1.078 1.078q0.422 0.422 0.422 1.031v0.328l-0.984 4.594h6.328q0.797 0 1.406 0.586t0.609 1.383zM0.984 21v-12h4.031v12h-4.031z"></path></svg>') ' Success';
+      display: flex;
+      font-weight: bold;
+      color: rgb(30,108,95);
+      align-items: middle;
+      font-size: 16px;
+      position: relative;
+      margin-bottom: 14px;
+    }
+    .alert-tip::before {
+      content: url('data:image/svg+xml;utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 -4 24 28"><path fill="rgb(30,108,95)" d="M23.016 9.984v2.016q0 0.375-0.141 0.75l-3.047 7.031q-0.469 1.219-1.828 1.219h-9q-0.797 0-1.406-0.609t-0.609-1.406v-9.984q0-0.797 0.609-1.406l6.563-6.609 1.078 1.078q0.422 0.422 0.422 1.031v0.328l-0.984 4.594h6.328q0.797 0 1.406 0.586t0.609 1.383zM0.984 21v-12h4.031v12h-4.031z"></path></svg>') ' Tip';
+    }
+
+    /* ::: info ::: */
+    .alert-info, .alert-note {
+      color: #000;
+      background-color: #d9edf7;
+      border-color: #d9edf7;
+    }
+    .alert-info::before, .alert-note::before {
+      content: url('data:image/svg+xml;utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 -4 24 28"><path fill="rgb(49,112,143)" d="M12.984 9v-2.016h-1.969v2.016h1.969zM12.984 17.016v-6h-1.969v6h1.969zM12 2.016q4.125 0 7.055 2.93t2.93 7.055-2.93 7.055-7.055 2.93-7.055-2.93-2.93-7.055 2.93-7.055 7.055-2.93z"></path></svg>') ' Infomation';
+      display: flex;
+      font-weight: bold;
+      color: rgb(49,112,143);
+      align-items: middle;
+      font-size: 16px;
+      position: relative;
+      margin-bottom: 14px;
+    }
+    .alert-note::before {
+      content: url('data:image/svg+xml;utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 -4 24 28"><path fill="rgb(49,112,143)" d="M12.984 9v-2.016h-1.969v2.016h1.969zM12.984 17.016v-6h-1.969v6h1.969zM12 2.016q4.125 0 7.055 2.93t2.93 7.055-2.93 7.055-7.055 2.93-7.055-2.93-2.93-7.055 2.93-7.055 7.055-2.93z"></path></svg>') ' Note';
+    }
+
+    /* ::: important ::: */
+    .alert-important {
+      color: #000;
+      background-color: rgb(255,244,220);
+      border-color: rgb(255,244,220);
+    }
+    .alert-important::before {
+      content: url('data:image/svg+xml;utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 -4 24 28"><path fill="rgb(175,86,10)" d="M12.984 12.984v-6h-1.969v6h1.969zM12.984 17.016v-2.016h-1.969v2.016h1.969zM12 2.016q4.125 0 7.055 2.93t2.93 7.055-2.93 7.055-7.055 2.93-7.055-2.93-2.93-7.055 2.93-7.055 7.055-2.93z"></path></svg>') ' Important';
+      display: flex;
+      font-weight: bold;
+      color: rgb(175,86,10);
+      align-items: middle;
+      font-size: 16px;
+      position: relative;
+      margin-bottom: 14px;
+    }
+
+    /* ::: restricted ::: */
+    .alert-restricted {
+      color: #000;
+      background-color: rgb(233,212,255);
+      border-color: rgb(233,212,255);
+    }
+    .alert-restricted::before {
+      content: url('data:image/svg+xml;utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="rgb(109,0,235)" d="M13.13 22.19l-1.63-3.83c1.57-0.58 3.040-1.36 4.4-2.27l-2.77 6.1zM5.64 12.5l-3.83-1.63 6.1-2.77c-0.91 1.36-1.69 2.83-2.27 4.4zM21.61 2.39c0 0-4.95-2.121-10.61 3.54-2.19 2.19-3.5 4.6-4.35 6.71-0.28 0.75-0.090 1.57 0.46 2.13l2.13 2.12c0.55 0.56 1.37 0.74 2.12 0.46 2.14-0.82 4.52-2.16 6.71-4.35 5.66-5.66 3.54-10.61 3.54-10.61zM14.54 9.46c-0.78-0.78-0.78-2.050 0-2.83s2.050-0.78 2.83 0c0.77 0.78 0.78 2.050 0 2.83s-2.050 0.78-2.83 0zM8.88 16.53v0zM6.24 22l3.64-3.64c-0.34-0.090-0.67-0.24-0.97-0.45l-4.080 4.090h1.41zM2 22h1.41l4.77-4.76-1.42-1.41-4.76 4.76v1.41zM2 19.17l4.090-4.080c-0.21-0.3-0.36-0.62-0.45-0.97l-3.64 3.64v1.41z"></path></svg>') ' Restricted';
+      display: flex;
+      font-weight: bold;
+      color: rgb(109,0,235);
+      align-items: middle;
+      font-size: 16px;
+      position: relative;
+      margin-bottom: 14px;
+    }
+
+    /* ::: danger ::: */
+    .alert-danger, .alert-warning {
+      color: #000;
+      background-color: rgb(238,163,165);
+      border-color: rgb(238,163,165);
+    }
+    .alert-danger::before, .alert-warning::before {
+      content: url('data:image/svg+xml;utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 -4 24 28"><path fill="rgb(139,25,36)" d="M12.984 12.984v-6h-1.969v6h1.969zM12.984 17.016v-2.016h-1.969v2.016h1.969zM23.016 12l-2.438 2.766 0.328 3.703-3.609 0.797-1.875 3.188-3.422-1.453-3.422 1.453-1.875-3.141-3.609-0.844 0.328-3.703-2.438-2.766 2.438-2.813-0.328-3.656 3.609-0.797 1.875-3.188 3.422 1.453 3.422-1.453 1.875 3.188 3.609 0.797-0.328 3.703z"></path></svg>') ' Danger';
+      display: flex;
+      font-weight: bold;
+      color: rgb(139,25,36);
+      align-items: middle;
+      font-size: 16px;
+      position: relative;
+      margin-bottom: 14px;
+    }
+    .alert-warning::before {
+      content: url('data:image/svg+xml;utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 -4 24 28"><path fill="rgb(139,25,36)" d="M12.984 12.984v-6h-1.969v6h1.969zM12.984 17.016v-2.016h-1.969v2.016h1.969zM23.016 12l-2.438 2.766 0.328 3.703-3.609 0.797-1.875 3.188-3.422-1.453-3.422 1.453-1.875-3.141-3.609-0.844 0.328-3.703-2.438-2.766 2.438-2.813-0.328-3.656 3.609-0.797 1.875-3.188 3.422 1.453 3.422-1.453 1.875 3.188 3.609 0.797-0.328 3.703z"></path></svg>') ' Warning';
+    }
+
+    color: rgb(225,228,232);
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+    background-color: rgb(36,41,46);
+
+    hr{
+      height: 2px;
+      margin: -2px 0px 12px 0px;
+      background-color: rgb(76,80,84);
+    }
+
+    strong {
+      color: inherit;
+    }
+
+    h1 {
+      color: inherit;
+      padding-bottom: 0.3em;
+      border-bottom: 1px solid rgb(76,80,84);
+      font-size: 2em;
+      font-weight: 400;
+    }
+    h2 {
+      color: inherit;
+      padding-bottom: 0.3em;
+      font-size: 1.5em;
+    }
+    h3 {
+      color: inherit;
+      font-size: 1.25em;
+    }
+    h4 {
+      color: inherit;
+      font-size: 1em;
+    }
+
+    /* コードのフォントサイズ・背景色等を変更 */
+    pre[class*="language-"] {
+      border-radius: 0.2em;
+      background-color: rgba(47,54,61,1) !important;
+    }
+    code[class*="language-"], pre[class*="language-"] {
+      font-size: 14px !important;
+    }
+    code{
+      font-size: 14px !important;
+    }
+
+    /* コメントの色を変更 */
+    .token.comment{color: #6A9955}
+
+    /* テーブルのスタイルはデフォルトに戻す */
+    table th, table td {
+      border: none;
+    }
+    table th {
+      border-bottom: 1px solid rgb(225,228,232);
+    }
+  }
