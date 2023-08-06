@@ -61,9 +61,12 @@ $ docker run --rm -it \
 
 コマンドが長いので、`alias`に登録する。
 
-```
+```sh
 $ alias pandoc='docker run --rm -it -v $(pwd):/data -v $HOME:/home/user -v /usr/local/share/fonts:/usr/local/share/fonts -v /usr/share/fonts:/usr/share/fonts pandoc/myextra -d /.pandoc/pandoc.yml -L /.pandoc/filters.lua'
+# PDFにする
 $ pandoc README.md -o example.pdf
+# 複数の*.mdファイルを1つのPDFにする
+$ pandoc README1.md README2.md README3.md -o example.pdf
 ```
 
 # Markdownで取り扱えるメタデータ
@@ -89,3 +92,27 @@ abstract: |
 ...
 
 ```
+
+# 好きなフォントを使用する
+次の手順を実行することで、自分の好きなフォントをPDFで使うことができる。
+
+1. `/usr/local/share/fonts` 内に、ttf,otfなどのフォントファイルを格納する  
+   ```sh
+   # aptなどを使って、フォントをインストールする例
+   $ sudo apt install fonts-roboto fonts-ipaexfont
+   # TTFファイルなどを直接格納する場合
+   $ sudo mkdir /usr/local/share/fonts/myfonts
+   $ sudo mv /path/to/font.ttf /usr/local/share/fonts/myfonts
+   ```
+2. pandoc.yml のフォント設定項目を変更する  
+   ```yaml
+   mainfont: 'BIZ UDPGothic'
+   sansfont: 'BIZ UDPGothic'
+   CJKmainfont: 'BIZ UDPGothic'
+   monofont: 'BIZ UDGothic'
+   ```
+3. docker image を作り直す  
+   ```sh
+   # docker build -t <任意の名前> . -f ./config/Dockerfile
+   $ docker build -t pandoc/myextra . -f ./config/Dockerfile
+   ```
