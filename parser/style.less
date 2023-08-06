@@ -15,7 +15,18 @@
     .alert > p,.alert > ul {
       margin-bottom: 0;
     }
-
+    .alert code {
+      overflow-x: scroll;
+    }
+    .alert pre, .alert pre[class*="language-"], .alert code {
+      background-color: #F9F9FA !important;
+      color: #0055BD !important;
+      border-radius: 2px;
+    }
+    .alert pre[class*="language-"] {
+      padding: 6px;
+      margin: 6px 0;
+    }
     /* ::: success ::: */
     .alert-success, .alert-tip {
       color: #000;
